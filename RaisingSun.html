@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <title>Sri Eshwar's Form</title>
+</head>
+<body style="text-align: center;">
+    <h1>Sri Eshwar college's Form </h1>
+    <p>Fill all the field in the form</p>
+    <form  action="result.html" method="GET"  enctype="multipart/form-data" >
+        
+        <div>
+            <h3>Personl Information :</h3>
+
+            <label for="f_name">First Name :</label>
+            <input type="text" placeholder="your first name " name="First Number" id="f_name" required>
+            &nbsp; 
+            <label for="n_name">Middle Name :</label>
+            <input type="text" placeholder="your middle name " name="Middle Number" id="m_name" >
+            &nbsp; 
+            <label for="l_name">Last Name :</label>
+            <input type="text" placeholder="your last name " name="Last Name" id="l_name" required>
+            <br> <br>
+            
+            <label for="email">Email Address :</label>
+            <input type="email" placeholder="Enter your email address" name="Email" id="email" required>
+            &nbsp; &nbsp;
+
+            <label for="Country_code">Country_code:</label>
+            <input type="number" placeholder="eg:-1234" name="Country_code"  id="Country_code" required minlength="4" maxlength="4">
+            <br> <br>
+
+            <label for="Phone number">Phone number:</label>
+            <input type="number" placeholder="Enter your phone number" name="Phone number:" id="Phone number" >
+            &nbsp; &nbsp;
+            
+            <label for="Company name">Company name:</label>
+            <input type="text" placeholder="Enter your company's name" name="Company name:" id="Company name"  >
+            <br> <br>
+
+            <label for="Job title">Job title:</label>
+            <input type="text" placeholder="Enter your job title" name="Job title:" id="Company name"  >
+            &nbsp; &nbsp;
+
+
+
+             <b>Gender:-</b>
+             <label for="Male">Male</label>
+             <input type="radio" id="Male" name="gender" > &nbsp;
+                 
+             <label for="Female">Female</label>
+             <input type="radio" id="Female" name="gender" > &nbsp;
+                 
+             <label for="others">others</label>
+             <input type="radio" id="others" name="gender" > &nbsp;
+
+            
+            <br><br>
+
+            <label for="Age">Age:</label>
+            <input type="number" placeholder="your age " name="Age:" id="Age"  min="15" max="60" required>
+            &nbsp; &nbsp;
+
+            <label for="Country">Country:</label>
+            <input type="text" placeholder="your country" name="Country:" id="Country" required>
+            &nbsp; &nbsp;
+
+            <label for="City">City:</label>
+            <input type="text" placeholder="your city" name="City:" id="City" required>
+            <br> <br>
+
+            <h3>Additional Information</h3>
+            <span>
+                <label for="Food" >Dietary Perference:-</label>
+                <select name="Food" id="Food">
+                    <option  selected disabled > ~food~  </option>
+                    <optgroup label="Veg">
+                        <option >Paneer chilli </option>
+                    </optgroup>
+                    <optgroup label="Non-Veg" >
+                        <option > chicken biryani</option>
+                    </optgroup>
+                </select>
+            </span> 
+            &nbsp; &nbsp;
+
+            <label for="T-shirt size">T-shirt size:</label>
+            <select name="T-shirt" id="T-shirt size">
+                <option >S</option>
+                <option >M</option>
+                <option >L</option>
+                <option >XL</option>
+                <option >XXl</option>
+            </select> 
+            <br> <br>
+
+            <label for="t-color">Preferred T-shirt Color (Optional):</label>
+            <input type="text" placeholder="blue or gray" name="T-shirt color:" id="t-color">
+            <br> <br>
+
+            <b>Session Preferences (Optional): </b> 
+            <label for="session-1">session-1</label>
+            <input type="checkbox" id="session-1" name="session-1" > &nbsp;
+                
+            <label for="session-2">session-2</label>
+            <input type="checkbox" id="session-2" name="session-2" > &nbsp;
+                
+            <label for="session-3">session-3</label>
+            <input type="checkbox" id="session-3" name="session-3" > &nbsp;
+            <br> <br>
+
+            <label for="Workshop Selection">Workshop Selection:</label>
+            <select name="Workshop Selection" id="Workshop Selection">
+                <option >AI</option>
+                <option >CSE</option>
+                <option >Electronic</option>
+            </select> 
+            &nbsp;  &nbsp;
+
+
+            <label for="date_workshop">Date of attending the workshop:</label>
+            <select name="date_workshop" id="date_workshop">
+                <option >15-10-2023</option>
+                <option >16-10-2023</option>
+                <option >18-10-2023</option>
+            </select> 
+            <br> <br>
+
+
+
+            <b>Will you bring a guest?:-</b>
+            <label for="Yes">Yes</label>
+            <input type="radio" id="Yes" name="guest" > &nbsp;
+                
+            <label for="No">No</label>
+            <input type="radio" id="No" name="guest" > &nbsp;       
+            &nbsp;  &nbsp;  &nbsp;
+
+            <label for="guest_name">Guest name :</label>
+            <input type="text" placeholder="Enter guest name " name="FiGuest name" id="guest_name" required>
+            <br><br>
+
+            <span>
+                <label for="Food" >Guest Dietary Preferences:-</label>
+                <select name="Food" id="Food">
+                    <option  selected disabled > ~food~  </option>
+                    <optgroup label="Veg">
+                        <option >Paneer chilli </option>
+                    </optgroup>
+                    <optgroup label="Non-Veg" >
+                        <option > chicken biryani</option>
+                    </optgroup>
+                </select>
+            </span> <br><br>
+
+
+            <b>Preferred Payment Method:-</b>
+            <label for="Credit">Credit card</label>
+            <input type="radio" id="Credit" name="Payment" > &nbsp;
+                
+            <label for="Debit">Debit card</label>
+            <input type="radio" id="Debit" name="Payment" > &nbsp;       
+            <br><br>
+
+            <label for="Card_number">Card_number:</label>
+            <input type="number" placeholder="enter exact 16 number" name="Card_number"  id="Card_number" required minlength="16" maxlength="16" >
+            &nbsp;  &nbsp;  &nbsp;
+
+            <label for="Card_exp">Card Expiration Date:</label>
+            <input type="date"  name="Card_exp"  id="Card_exp" required >
+            <br> <br>
+
+            <label for="Card_CVV">Card_CVV:</label>
+            <input type="number" placeholder="enter exact 3 numbers" name="Card_CVV"  id="Card_CVV" required minlength="3" maxlength="3" >
+            &nbsp;  &nbsp;  &nbsp;
+            
+            <label for="billing_add">Billing Address:</label>
+            <textarea name="Address" id="billing_add" cols="10" rows="3" ></textarea>
+            <br> <br>
+
+
+            <b>How did you hear about us?: </b> 
+            <label for="friends">friends</label>
+            <input type="checkbox" id="friends" name="friends" > &nbsp;
+                
+            <label for="media">media</label>
+            <input type="checkbox" id="media" name="media" > &nbsp;
+                
+            <label for="consultancy">consultancy</label>
+            <input type="checkbox" id="consultancy" name="consultancy" > &nbsp;
+            <br> <br>
+
+
+
+            <label for="file">Upload Photo for ID Card:</label>
+            <input type="file" id="file" name="File" accept=".jpg" >
+            &nbsp;  &nbsp;
+
+            <label for="file2">Collect Profile:</label>
+            <input type="file" id="file2" name="File" accept=".pdf">
+            <br> <br>
+
+            <label for="comment">Additional Comments:</label>
+            <textarea name="comments" id="comment" cols="10" rows="3" ></textarea>
+            <br> <br> <br>
+
+            <div>
+                <button type="submit">Submit</button>  &nbsp; &nbsp; &nbsp;
+                <button type="reset">Reset</button>
+            </div>
+
+        </div>
+
+
+
+    </form>
+</body>
+</html>
