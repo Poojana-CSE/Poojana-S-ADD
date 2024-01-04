@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Eshwar Conference</title>
+    <link rel="stylesheet" href="MyStyle.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #272333;
+            color: rgb(245, 240, 240);
+            padding: 10px 15px;  
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: #ff0000;
+        }
+    </style>
+</head>
+
+<body bgcolor="aqua">
+    <h1>Sri Eshwar Conference Registration Form</h1>
+    <form id="conferenceForm" onsubmit="return validateForm()">
+        <table>
+            <!-- Form fields as per the instructions -->
+            <tr>
+                <th><label for="name">Name *</label></th>
+                <td><input type="text" id="name" name="name" placeholder="Enter your name" autofocus required></td>
+            </tr>
+            <tr>
+                <th><label for="email">Email *</label></th>
+                <td><input type="email" id="email" name="email" placeholder="Enter your email" required></td>
+            </tr>
+
+            <tr>
+                <th><label for="countryCode">Country Code *</label></th>
+                <td><input type="text" id="countryCode" name="countryCode" value="+91" maxlength="4" required></td>
+            </tr>
+
+            <tr>
+                <th><label for="phoneNumber">Phone Number:</label></th>
+                <td><input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Your Phone Number" required></td> 
+            </tr>
+
+            <tr>
+                <th><label for="companyName">Company Name:</label></th>
+                <td><input type="text" id="companyName" name="companyName" placeholder="Your Company Name" maxlength="20" required></td> 
+           </tr>
+
+           <tr>
+                <th><label for="jobTitle">Job Title:</label></th>
+                <td><input type="text" id="jobTitle" name="jobTitle" placeholder="Your Job Title" required></td>
+           </tr> 
+
+           <tr>
+                <th><label>Gender:</label></th>
+                <td><label><input type="radio" name="gender" value="male" required>Male</label></td>
+                <td><label><input type="radio" name="gender" value="female" required>Female</label></td>
+                <td><label><input type="radio" name="gender" value="other" required>Other</label></td>
+           </tr>     
+
+            <tr>
+                <th><label for="age">Age:</label></th>
+                <td><input type="number" id="age" name="age" min="15" max="70" required></td>
+            </tr>
+            
+            <tr>
+                <th><label for="country">Country:</label></th>
+                <td><input type="text" id="country" name="country" placeholder="Your Country" required></td>
+            </tr>     
+
+            <tr>
+                <th><label for="city">City:</label></th>
+                <td><input type="text" id="city" name="city" placeholder="Your City" required></td>
+            </tr>
+            
+            <tr>
+                <th><label>Vegetarian</label></th>
+                <td><label><input type="checkbox" name="veg" value="chappathi"> Chappathi</label></td>
+                <td><label><input type="checkbox" name="veg" value="Idly"> Idly</label></td>
+                <td><label><input type="checkbox" name="veg" value="pongal"> Pongal</label></td>
+            </tr>    
+
+            <tr>
+                <th><label>Non-Vegetarian</label></th>
+                <td><label><input type="checkbox" name="nonveg[]" value="chicken"> Chicken</label></td>
+                <td><label><input type="checkbox" name="nonveg[]" value="fish"> Fish</label></td>
+                <td><label><input type="checkbox" name="nonveg[]" value="mutton"> Mutton</label></td>
+            </tr>
+
+            <tr>
+                <th><label for="tshirt-size">T-Shirt Size</label></th>
+                <td>
+                    <select id="tshirt-size" name="tshirt-size">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <th><label for="tshirt-color">Preferred T-shirt Color</label></th>
+                <td><input type="color" id="tshirt-color" name="tshirt-color"></td>
+            </tr>
+
+            <tr>
+                <th>Will you bring Guest ?</th>
+                <td>
+                    <label><input type="radio" name="bring-guest" value="yes"> Yes</label>
+                    <label><input type="radio" name="bring-guest" value="no"> No</label>
+                </td>
+            </tr>
+
+            <tr>
+                <th>Preferred Payment Method</th>
+              </tr>
+              <tr>
+                <td>
+                  <input type="radio" id="creditCard" name="paymentMethod" value="Credit Card" required>
+                  <label for="creditCard">Credit Card</label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="radio" id="debitCard" name="paymentMethod" value="Debit Card" required>
+                  <label for="debitCard">Debit Card</label>
+                </td>
+              </tr>
+
+              <tr>
+                <th>Card Number</th>
+              </tr>
+              <tr>
+                <td>
+                  <input type="text" id="cardNumber" name="cardNumber" pattern="\d{16}" title="Please enter 16 digits" maxlength="16" inputmode="numeric" required>
+                </td>
+              </tr>
+
+              <tr>
+                <th>Card Expiration Date</th>
+              </tr>
+              <tr>
+                <td>
+                  <label for="expirationMonth">Month:</label>
+                  <select id="expirationMonth" name="expirationMonth" required>
+                    <option value="" disabled selected>Select Month</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select>
+                  <br>
+                  <label for="expirationYear">Year:</label>
+                  <select id="expirationYear" name="expirationYear" required>
+                    <option value="" disabled selected>Select Year</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                  </select>
+                </td>
+              </tr>
+
+              <tr>
+                <th>Card CVV</th>
+              </tr>
+              <tr>
+                <td>
+                  <input type="text" id="cardCVV" name="cardCVV" pattern="\d{3}" title="Please enter 3 digits" maxlength="3" inputmode="numeric" required>
+                </td>
+              </tr>
+              
+              <tr>
+                <th>Billing Address</th>
+              </tr>
+              <tr>
+                <td>
+                  <label for="billingAddress">Address:</label>
+                  <textarea id="billingAddress" name="billingAddress" rows="4" cols="50" required></textarea>
+                </td>
+              </tr>
+              
+              <tr>
+                <th>How did you hear about us?</th>
+              </tr>
+              <tr>
+                <td>
+                  <label for="onlineSearch">
+                    <input type="checkbox" id="onlineSearch" name="howDidYouHear[]" value="Online Search"> Online Search
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="socialMedia">
+                    <input type="checkbox" id="socialMedia" name="howDidYouHear[]" value="Social Media"> Social Media
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="friendReferral">
+                    <input type="checkbox" id="friendReferral" name="howDidYouHear[]" value="Friend Referral"> Friend Referral
+                  </label>
+                </td>
+              </tr>
+              
+              <tr>
+                <th>Upload Photo for ID Card</th>
+              </tr>
+              <tr>
+                <td>
+                  <input type="file" id="idCardPhoto" name="idCardPhoto" accept=".jpg" required>
+                  <label for="idCardPhoto">Choose a JPG file</label>
+                </td>
+              </tr>
+
+              <tr>
+                <th>Collect Profile</th>
+              </tr>
+              <tr>
+                <td>
+                  <input type="file" id="profilePDF" name="profilePDF" accept=".pdf" required>
+                  <label for="profilePDF">Choose a PDF file</label>
+                </td>
+              </tr>  
+
+              <tr>
+                <th>Additional Comments</th>
+              </tr>
+              <tr>
+                <td>
+                  <label for="additionalComments">Comments:</label>
+                  <textarea id="additionalComments" name="additionalComments" rows="4" cols="50" required></textarea>
+                </td>
+              </tr>  
+        </table>
+
+        <!-- Add other form fields as per the instructions -->
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+
+    <script src="Validation.js">
+
+function validateForm() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phno").value.trim();
+    const job = document.getElementById("job").value.trim();
+
+    const regPhone = /^\d{10}$/; // Regular expression for a 10-digit phone number
+
+    if (name === "" || email === "" || phone === "" || job === "") {
+        alert("Please fill in all fields.");
+        return false;
+    }
+
+    if (!regPhone.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        return false;
+    }
+
+    alert("Form Successfully Submitted");
+    redirectWithQuery(name, email, phone, job);
+    return true;
+}
+
+function redirectWithQuery(name, email, phone, job) {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phno").value; 
+    const job = document.getElementById("job").value;
+  
+    const queryString = ?name=${name}&email=${email}&phone=${phone}&job=${job};
+
+    
+    window.open(result.html${queryString}, "_blank");
+}
+        document.getElementById('cardNumber').addEventListener('input', function (e) {
+        
+        var value = this.value.replace(/\D/g, '');
+        
+        
+        value = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+
+        
+        this.value = value;
+      });
+
+      function uploadFile() {
+      const fileInput = document.getElementById('profilePDF');
+      const file = fileInput.files[0];
+
+      if (file) {
+        
+        
+        const totalChunks = Math.ceil(file.size / chunkSize);
+
+        let currentChunk = 0;
+
+        const uploadChunk = () => {
+          const start = currentChunk * chunkSize;
+          const end = Math.min(start + chunkSize, file.size);
+
+          const chunk = file.slice(start, end);
+          const formData = new FormData();
+          formData.append('profileChunk', chunk);
+          formData.append('totalChunks', totalChunks);
+
+          
+          fetch('upload_profile_chunk.php', {
+            method: 'POST',
+            body: formData,
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              
+              const progress = (currentChunk + 1) / totalChunks * 100;
+              document.getElementById('uploadProgress').value = progress;
+
+              
+              if (currentChunk < totalChunks - 1) {
+                currentChunk++;
+                uploadChunk();
+              } else {
+                alert('File upload complete!');
+              }
+            } else {
+              alert('Error uploading file.');
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('Error uploading file.');
+          });
+        };
+
+        
+        uploadChunk();
+      } else {
+        alert('Please choose a file.');
+      }
+    }
+    </script>
+</body>
+</html>
